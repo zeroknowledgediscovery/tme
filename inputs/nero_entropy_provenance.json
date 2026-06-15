@@ -1,0 +1,35 @@
+{
+  "purpose": "Provenance metadata for entropy-rate values imported into TME symbolic-scale calculations.",
+  "tme_scope": "TME uses these values as input constants to compute symbolic rare-valid lift, L = log10(I + 1), and Lambda = log10(L + 1). TME does not recompute entropy rates from raw text.",
+  "source_repository": {
+    "name": "NERO",
+    "url": "https://github.com/zeroknowledgediscovery/nero",
+    "commit_or_release": "TO_BE_FILLED_AT_SUBMISSION"
+  },
+  "entropy_rate_method": {
+    "description": "Nonparametric probabilistic-finite-state-automaton entropy-rate estimation after mapping text to a shared 27-symbol alphabet.",
+    "alphabet": "a-z plus space",
+    "units": "bits per character",
+    "manuscript_location": "Appendix B"
+  },
+  "human_reference": {
+    "source": "Project Gutenberg long-form prose",
+    "document_count": 4341,
+    "mean_entropy_rate_bits_per_character": 0.77,
+    "median_entropy_rate_bits_per_character": 0.78,
+    "sd_entropy_rate_bits_per_character": 0.12
+  },
+  "gpt_reference": {
+    "source": "GPT-5 long-form prose generated under the NERO protocol",
+    "sample_count": 197,
+    "mean_entropy_rate_bits_per_character": 0.74,
+    "median_entropy_rate_bits_per_character": 0.74,
+    "sd_entropy_rate_bits_per_character": 0.08
+  },
+  "imported_into_tme": {
+    "input_file": "inputs/symbolic_entropy_inputs.json",
+    "H_human_bits_per_character": 0.77,
+    "H_gpt_bits_per_character": 0.74,
+    "note": "These are central mean values used for the manuscript symbolic-scale calculation. Sensitivity to finite-length slack rho is handled separately in TME."
+  }
+}
