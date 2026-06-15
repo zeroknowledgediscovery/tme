@@ -2,6 +2,12 @@
 
 This repository contains a small, auditable code collection for reproducing the numerical calibration values used in the manuscript **Thermodynamic Measure of Intelligence**.
 
+The central scope distinction is:
+
+- **TME computes manuscript-scale quantities**: rare-valid lift `I`, log scale `L = log10(I + 1)`, compressed scale `Lambda = log10(L + 1)`, velocity-selection demon values, controller examples, Maxwell-demon scale values, and manuscript-ready CSV/JSON/LaTeX outputs.
+- **TME does not recompute the GPT/human entropy-rate estimates from raw text.** Those empirical entropy-rate values are imported from the NERO workflow and recorded as input constants.
+- **NERO is the source repository for the GPT/human text entropy-rate analysis.** Cite NERO for the preprocessing, corpus handling, GPT/human text analysis, and entropy-rate estimates used as symbolic inputs here.
+
 The code generates the values used for:
 
 - Fig. 1 example scale values.
@@ -10,7 +16,83 @@ The code generates the values used for:
 - Appendix C scale calculations.
 - Derived JSON/CSV/LaTeX tables for direct manuscript use.
 
-The repository is intentionally lightweight. It uses only the Python standard library. The GPT/human entropy-rate estimates are not recomputed here; they are treated as imported constants from the NERO workflow and are recorded in `inputs/symbolic_entropy_inputs.json`. The NERO repository should be cited for the human/GPT entropy-rate estimation pipeline and raw/derived text analysis outputs.
+The repository is intentionally lightweight. It uses only the Python standard library. Every number generated here is traceable to a named formula and an explicit JSON input file.
+
+## What is computed here, and what is imported?
+
+| Quantity | Computed in TME? | Source / formula |
+| --- | --- | --- |
+| Passive baseline | Yes | `I = 0`, `L = 0`, `Lambda = 0` |
+| Fixed-feedback controller | Yes | `I = alpha - 1`, with `alpha` range from `inputs/controller_inputs.json` |
+| Repeated dynamic controller | Yes | `I + 1 approx 2^m`, with stage range from `inputs/controller_inputs.json` |
+| Maxwell demon, single entropy reduction | Yes | `L = (Delta S / k_B) / ln(10)`, with constants from `inputs/demon_inputs.json` |
+| Velocity-selection demon | Yes | Maxwell-Boltzmann tail calculation in `src/tme/demons.py`, with parameters from `inputs/demon_inputs.json` |
+| Human symbolic scale | Yes, from imported symbolic assumptions | `I_H + 1 = q_H N_V / N_G`; `N_V`, `N_G`, and `q_H` are manuscript assumptions in `inputs/symbolic_entropy_inputs.json` |
+| GPT-5 symbolic scale | Yes, from imported NERO entropy rates | `log2(q_GPT/q_H) = n_star (H_GPT - H_H) + rho`; `H_GPT` and `H_H` are imported from NERO and recorded in `inputs/symbolic_entropy_inputs.json` |
+| GPT/human entropy-rate estimation from raw or generated text | No | Performed in the NERO repository, not in TME |
+
+## Symbolic GPT/human calculation
+
+TME uses the following symbolic-scale calculation.
+
+For the expert-human symbolic row,
+
+```text
+I_H + 1 = q_H N_V / N_G.
+```
+
+The current default inputs are recorded in `inputs/symbolic_entropy_inputs.json`:
+
+```text
+N_V = 5e21
+N_G = 1e7
+q_H = 1
+```
+
+Thus
+
+```text
+I_H + 1 = 5e14,
+L_H = log10(5e14),
+Lambda_H = log10(L_H + 1).
+```
+
+For the GPT-5 symbolic row, TME imports the entropy-rate estimates from NERO:
+
+```text
+H_human = 0.77 bits/character
+H_gpt = 0.74 bits/character
+```
+
+TME then applies the finite-resolution symbolic correction
+
+```text
+log2(q_GPT / q_H) = n_star * (H_gpt - H_human) + rho_n_star.
+```
+
+With the default central values
+
+```text
+n_star = 100
+rho_n_star = 0
+```
+
+this gives
+
+```text
+log2(q_GPT / q_H) = 100 * (0.74 - 0.77) = -3,
+q_GPT / q_H = 2^-3 = 0.125,
+I_GPT + 1 = (I_H + 1) * 0.125 = 6.25e13.
+```
+
+TME then computes
+
+```text
+L_GPT = log10(I_GPT + 1),
+Lambda_GPT = log10(L_GPT + 1).
+```
+
+The entropy-rate values themselves are not produced by TME. They should be traced to the NERO repository and to the provenance file `inputs/nero_entropy_provenance.json`.
 
 ## Quick start
 
@@ -47,6 +129,7 @@ The manuscript assumptions are stored as explicit JSON files in `inputs/`:
 - `controller_inputs.json`: fixed-feedback and repeated-control assumptions.
 - `demon_inputs.json`: Maxwell-demon and velocity-selection parameters.
 - `symbolic_entropy_inputs.json`: symbolic-scale parameters, including the NERO-derived entropy-rate values.
+- `nero_entropy_provenance.json`: provenance metadata for the imported NERO entropy-rate values.
 
 The symbolic defaults are:
 
@@ -61,8 +144,8 @@ Sensitivity to `rho`, `N_V`, and `N_G` can be explored by editing the input JSON
 
 ## Scope
 
-This code reproduces numerical scale calculations. It does not prove the manuscript theorems and does not regenerate the NERO entropy-rate estimates from raw text. The intent is to make every number plotted or tabulated in the TME manuscript traceable to a named formula and an explicit parameter file.
+This code reproduces numerical scale calculations. It does not prove the manuscript theorems and does not regenerate the NERO entropy-rate estimates from raw text. The intent is to make every number plotted or tabulated in the TME manuscript traceable to a named formula, an explicit parameter file, and, where needed, a named external provenance source.
 
 ## Suggested manuscript data/code availability sentence
 
-> The code used to reproduce the numerical scale calculations in Fig. 1, Table I, Table II, and Appendix C is available in the public TME calculation repository. The entropy-rate estimates used for the symbolic GPT-human comparison are imported from the NERO workflow, which maps text to a common 27-symbol alphabet and applies the nonparametric entropy-rate estimator described in Appendix B. Derived CSV and LaTeX files containing the plotted and tabulated values are provided with the TME repository.
+> The code used to reproduce the numerical scale calculations in Fig. 1, Table I, Table II, and Appendix C is available in the public TME calculation repository. The GPT-human entropy-rate estimates used as symbolic inputs are imported from the NERO workflow, which performs the text preprocessing and entropy-rate estimation described in Appendix B. TME records these imported values, applies the finite-resolution symbolic-scale formulas, and provides derived CSV, JSON, and LaTeX outputs for the plotted and tabulated manuscript values.
