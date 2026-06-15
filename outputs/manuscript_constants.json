@@ -1,0 +1,148 @@
+{
+  "controllers": {
+    "fixed_feedback": {
+      "I_max": 99.0,
+      "I_min": 1.0,
+      "L_max": 2.0,
+      "L_mid": 1.1505149978319906,
+      "L_min": 0.3010299956639812,
+      "Lambda_max": 0.47712125471966244,
+      "Lambda_mid": 0.3325424756987418,
+      "Lambda_min": 0.1142873094756344,
+      "alpha_max": 100.0,
+      "alpha_min": 2.0
+    },
+    "repeated_dynamic_control": {
+      "I_max": 1023.0,
+      "I_min": 127.0,
+      "L_max": 3.010299956639812,
+      "L_mid": 2.55875496314384,
+      "L_min": 2.1072099696478683,
+      "Lambda_max": 0.6031768575681882,
+      "Lambda_mid": 0.5512980858352305,
+      "Lambda_min": 0.4923706016870089,
+      "stages_max": 10,
+      "stages_min": 7
+    }
+  },
+  "maxwell_single_entropy": {
+    "L": 3145.5821277040855,
+    "Lambda": 3.4978390715811107,
+    "deltaS_J_per_K": 1e-19,
+    "deltaS_over_kB": 7242.97051603992
+  },
+  "symbolic": {
+    "gpt5": {
+      "H_gpt_bits_per_character": 0.74,
+      "H_human_bits_per_character": 0.77,
+      "I": 62499999999998.88,
+      "I_plus_1": 62499999999999.88,
+      "L": 13.795880017344075,
+      "Lambda": 1.1701408008795915,
+      "N_G": 10000000.0,
+      "N_V": 5e+21,
+      "log2_q_ratio_gpt_to_human": -3.0000000000000027,
+      "n_star_characters": 100,
+      "q_ratio_gpt_to_human": 0.12499999999999976,
+      "rho_n_star": 0.0
+    },
+    "gpt5_rho_sensitivity": [
+      {
+        "H_gpt_bits_per_character": 0.74,
+        "H_human_bits_per_character": 0.77,
+        "I": 1953124999998.995,
+        "I_plus_1": 1953124999999.995,
+        "L": 12.290730039024169,
+        "Lambda": 1.1235488367148936,
+        "N_G": 10000000.0,
+        "N_V": 5e+21,
+        "log2_q_ratio_gpt_to_human": -8.000000000000004,
+        "n_star_characters": 100,
+        "q_ratio_gpt_to_human": 0.0039062499999999905,
+        "rho_n_star": -5.0
+      },
+      {
+        "H_gpt_bits_per_character": 0.74,
+        "H_human_bits_per_character": 0.77,
+        "I": 7812499999998.985,
+        "I_plus_1": 7812499999999.985,
+        "L": 12.892790030352131,
+        "Lambda": 1.1427894720233143,
+        "N_G": 10000000.0,
+        "N_V": 5e+21,
+        "log2_q_ratio_gpt_to_human": -6.000000000000003,
+        "n_star_characters": 100,
+        "q_ratio_gpt_to_human": 0.01562499999999997,
+        "rho_n_star": -3.0
+      },
+      {
+        "H_gpt_bits_per_character": 0.74,
+        "H_human_bits_per_character": 0.77,
+        "I": 62499999999998.88,
+        "I_plus_1": 62499999999999.88,
+        "L": 13.795880017344075,
+        "Lambda": 1.1701408008795915,
+        "N_G": 10000000.0,
+        "N_V": 5e+21,
+        "log2_q_ratio_gpt_to_human": -3.0000000000000027,
+        "n_star_characters": 100,
+        "q_ratio_gpt_to_human": 0.12499999999999976,
+        "rho_n_star": 0.0
+      },
+      {
+        "H_gpt_bits_per_character": 0.74,
+        "H_human_bits_per_character": 0.77,
+        "I": 499999999999998.06,
+        "I_plus_1": 499999999999999.06,
+        "L": 14.698970004336019,
+        "Lambda": 1.1958711596635576,
+        "N_G": 10000000.0,
+        "N_V": 5e+21,
+        "log2_q_ratio_gpt_to_human": -2.6645352591003757e-15,
+        "n_star_characters": 100,
+        "q_ratio_gpt_to_human": 0.9999999999999981,
+        "rho_n_star": 3.0
+      },
+      {
+        "H_gpt_bits_per_character": 0.74,
+        "H_human_bits_per_character": 0.77,
+        "I": 1999999999999995.2,
+        "I_plus_1": 1999999999999996.2,
+        "L": 15.301029995663981,
+        "Lambda": 1.2122150465696477,
+        "N_G": 10000000.0,
+        "N_V": 5e+21,
+        "log2_q_ratio_gpt_to_human": 1.9999999999999973,
+        "n_star_characters": 100,
+        "q_ratio_gpt_to_human": 3.9999999999999925,
+        "rho_n_star": 5.0
+      }
+    ],
+    "human": {
+      "I": 499999999999999.0,
+      "I_plus_1": 500000000000000.0,
+      "L": 14.698970004336019,
+      "Lambda": 1.1958711596635576,
+      "N_G": 10000000.0,
+      "N_V": 5e+21,
+      "delta_star": 2e-15,
+      "q_human": 1.0
+    }
+  },
+  "velocity_1mm3_range": {
+    "L_max": 2288522733739760.0,
+    "L_mid": 1369452767757265.8,
+    "L_min": 450382801774771.6,
+    "Lambda_max": 15.359555230981668,
+    "Lambda_mid": 15.136547058089707,
+    "Lambda_min": 14.65358179827997
+  },
+  "velocity_sparse_range": {
+    "L_max": 9.37919153172033,
+    "L_mid": 5.612511343267484,
+    "L_min": 1.845831154814638,
+    "Lambda_max": 1.0161635262497255,
+    "Lambda_mid": 0.8203664300435067,
+    "Lambda_min": 0.4542091295122948
+  }
+}

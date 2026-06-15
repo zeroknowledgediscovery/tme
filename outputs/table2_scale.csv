@@ -1,0 +1,9 @@
+example_regime,calculation_basis,I_display,L_min,L_max,Lambda_min,Lambda_max,sort_L_mid
+Passive matter / passive gas,"Baseline dynamics, P = P0.",0,0.0,0.0,0.0,0.0,0.0
+Narrow fixed-feedback controller,"Constant rare-valid lift, P(V_delta) = alpha delta, with alpha = 2--10^2.",1--99,0.3010299956639812,2.0,0.1142873094756344,0.47712125471966244,1.1505149978319906
+Repeated dynamic controller,"Sequential binary lift over 7--10 controlled stages, I + 1 approx 2^7--2^10.",127--1.02e+03,2.1072099696478683,3.010299956639812,0.4923706016870089,0.6031768575681882,2.55875496314384
+100-particle velocity-selection demon,Maxwell-Boltzmann velocity selection with N = 100 particles and epsilon = 2--5.,10^1.85--10^9.38,1.845831154814638,9.37919153172033,0.4542091295122948,1.0161635262497255,5.612511343267484
+GPT-5 symbolic generation,"Central sentence-scale rare-valid lift with N_V = 5e21, N_G = 1e7, n_star = 100, H_H = 0.77, H_GPT5 = 0.74, rho_100 = 0.",6.250e+13,13.795880017344075,13.795880017344075,1.1701408008795915,1.1701408008795915,13.795880017344075
+Expert human symbolic generation,Same sentence-scale calculation with q_H approx 1: I_H + 1 = N_V/N_G.,5.000e+14,14.698970004336019,14.698970004336019,1.1958711596635576,1.1958711596635576,14.698970004336019
+Maxwell demon with Delta S = 1e-19 J/K,Fluctuation-theorem scale with Delta S/k_B computed from the exact Boltzmann constant.,~10^3146,3145.5821277040855,3145.5821277040855,3.4978390715811107,3.4978390715811107,3145.5821277040855
+Velocity-selection demon in 1 mm^3 air,Maxwell-Boltzmann velocity selection with N = 2.44e16 and epsilon = 2--5.,10^(4.504e+14)--10^(2.289e+15),450382801774771.6,2288522733739760.0,14.65358179827997,15.359555230981668,1369452767757265.8

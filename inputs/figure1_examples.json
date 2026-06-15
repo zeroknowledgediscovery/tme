@@ -1,0 +1,44 @@
+{
+  "examples": [
+    {
+      "key": "passive",
+      "label": "Passive baseline\\n(rock)",
+      "source": "passive_baseline"
+    },
+    {
+      "key": "fixed_feedback",
+      "label": "Fixed-feedback\\ncontroller",
+      "source": "fixed_feedback_midpoint"
+    },
+    {
+      "key": "repeated_control",
+      "label": "Repeated\\ncontrol",
+      "source": "repeated_control_midpoint"
+    },
+    {
+      "key": "sparse_velocity_demon",
+      "label": "100-particle\\nvelocity demon",
+      "source": "velocity_sparse_midpoint"
+    },
+    {
+      "key": "gpt5_symbolic",
+      "label": "GPT-5\\nsymbolic",
+      "source": "gpt5_symbolic"
+    },
+    {
+      "key": "human_symbolic",
+      "label": "Human\\nsymbolic",
+      "source": "human_symbolic"
+    },
+    {
+      "key": "single_entropy_demon",
+      "label": "Maxwell demon\\n$\\Delta S=10^{-19}$",
+      "source": "maxwell_single_entropy"
+    },
+    {
+      "key": "velocity_1mm3",
+      "label": "Velocity demon\\n(1 mm$^3$ air)",
+      "source": "velocity_1mm3_midpoint"
+    }
+  ]
+}

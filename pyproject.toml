@@ -1,0 +1,14 @@
+[project]
+name = "tme-calculations"
+version = "0.1.0"
+description = "Reproducibility scripts for Thermodynamic Measure of Intelligence numerical calculations."
+requires-python = ">=3.10"
+authors = [{name = "Zero Knowledge Discovery"}]
+license = {text = "MIT"}
+readme = "README.md"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

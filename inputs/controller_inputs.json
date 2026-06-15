@@ -1,0 +1,10 @@
+{
+  "fixed_feedback": {
+    "alpha_min": 2.0,
+    "alpha_max": 100.0
+  },
+  "repeated_dynamic_control": {
+    "binary_stages_min": 7,
+    "binary_stages_max": 10
+  }
+}

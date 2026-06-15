@@ -1,0 +1,74 @@
+[
+  {
+    "I": 0.0,
+    "L": 0.0,
+    "Lambda": 0.0,
+    "key": "passive",
+    "label": "Passive baseline\\n(rock)",
+    "order": 1,
+    "source": "passive_baseline"
+  },
+  {
+    "I": 13.142135623730951,
+    "L": 1.1505149978319906,
+    "Lambda": 0.3325424756987418,
+    "key": "fixed_feedback",
+    "label": "Fixed-feedback\\ncontroller",
+    "order": 2,
+    "source": "fixed_feedback_midpoint"
+  },
+  {
+    "I": 361.03867196751236,
+    "L": 2.55875496314384,
+    "Lambda": 0.5512980858352305,
+    "key": "repeated_control",
+    "label": "Repeated\\ncontrol",
+    "order": 3,
+    "source": "repeated_control_midpoint"
+  },
+  {
+    "I": 409741.81168015266,
+    "L": 5.612511343267484,
+    "Lambda": 0.8203664300435067,
+    "key": "sparse_velocity_demon",
+    "label": "100-particle\\nvelocity demon",
+    "order": 4,
+    "source": "velocity_sparse_midpoint"
+  },
+  {
+    "I": 62499999999998.88,
+    "L": 13.795880017344075,
+    "Lambda": 1.1701408008795915,
+    "key": "gpt5_symbolic",
+    "label": "GPT-5\\nsymbolic",
+    "order": 5,
+    "source": "gpt5_symbolic"
+  },
+  {
+    "I": 499999999999999.0,
+    "L": 14.698970004336019,
+    "Lambda": 1.1958711596635576,
+    "key": "human_symbolic",
+    "label": "Human\\nsymbolic",
+    "order": 6,
+    "source": "human_symbolic"
+  },
+  {
+    "I": NaN,
+    "L": 3145.5821277040855,
+    "Lambda": 3.4978390715811107,
+    "key": "single_entropy_demon",
+    "label": "Maxwell demon\\n$\\Delta S=10^{-19}$",
+    "order": 7,
+    "source": "maxwell_single_entropy"
+  },
+  {
+    "I": Infinity,
+    "L": 1369452767757265.8,
+    "Lambda": 15.136547058089707,
+    "key": "velocity_1mm3",
+    "label": "Velocity demon\\n(1 mm$^3$ air)",
+    "order": 8,
+    "source": "velocity_1mm3_midpoint"
+  }
+]

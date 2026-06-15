@@ -1,0 +1,9 @@
+order,key,label,source,L,Lambda,I
+1,passive,Passive baseline\n(rock),passive_baseline,0.0,0.0,0.0
+2,fixed_feedback,Fixed-feedback\ncontroller,fixed_feedback_midpoint,1.1505149978319906,0.3325424756987418,13.142135623730951
+3,repeated_control,Repeated\ncontrol,repeated_control_midpoint,2.55875496314384,0.5512980858352305,361.03867196751236
+4,sparse_velocity_demon,100-particle\nvelocity demon,velocity_sparse_midpoint,5.612511343267484,0.8203664300435067,409741.81168015266
+5,gpt5_symbolic,GPT-5\nsymbolic,gpt5_symbolic,13.795880017344075,1.1701408008795915,62499999999998.88
+6,human_symbolic,Human\nsymbolic,human_symbolic,14.698970004336019,1.1958711596635576,499999999999999.0
+7,single_entropy_demon,Maxwell demon\n$\Delta S=10^{-19}$,maxwell_single_entropy,3145.5821277040855,3.4978390715811107,nan
+8,velocity_1mm3,Velocity demon\n(1 mm$^3$ air),velocity_1mm3_midpoint,1369452767757265.8,15.136547058089707,inf

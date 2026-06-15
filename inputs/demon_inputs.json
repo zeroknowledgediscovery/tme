@@ -1,0 +1,21 @@
+{
+  "physical_constants": {
+    "kB_J_per_K": 1.380649e-23,
+    "T_K": 300.0,
+    "nitrogen_molecular_mass_kg": 4.65e-26
+  },
+  "maxwell_single_entropy_reduction": {
+    "deltaS_J_per_K": 1e-19
+  },
+  "velocity_selection": {
+    "epsilons": [
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "N_sparse": 100.0,
+    "N_one_mm3_air": 2.44e+16,
+    "one_shot_half_chamber_factor": 0.5
+  }
+}
